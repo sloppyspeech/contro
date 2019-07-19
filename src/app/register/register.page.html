@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title position="floating">Register</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  <form [formGroup]="registerFormGroup">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">User Name</ion-label>
+      <!-- <ion-input type="text" [(ngModel)]="v_username" required="true"></ion-input> -->
+      <ion-input type="text" formControlName="fctl_username"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Password</ion-label>
+        <!-- <ion-input type="password" [(ngModel)]="v_password" required="true"></ion-input> -->
+        <ion-input type="password" formControlName="fctl_password"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating">Confirm Password</ion-label>
+        <!-- <ion-input type="password" [(ngModel)]="v_password" required="true"></ion-input> -->
+        <ion-input type="password" formControlName="fctl_cnfmpassword"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="register()" expand="block" color="secondary">
+    Register
+  </ion-button>
+  </form>
+  </ion-content>
+  

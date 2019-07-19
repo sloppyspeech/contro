@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-toolbar color="primary">
+      <ion-title position="floating">Contribute</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+  <form [formGroup]="contributeFormGroup">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating"></ion-label>
+      <ion-input type="number" formControlName="fctl_amount" placeholder="Amount"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label position="floating"></ion-label>
+        <ion-input type="text" formControlName="fctl_purpose" placeholder="Purpose"></ion-input>
+    </ion-item>
+    <ion-item>
+          <ion-label position="floating"></ion-label>
+          <ion-datetime formControlName="fctl_paymentDate" display-format="MMMM  DD,YYYY" placeholder="Payment Date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label color="medium">Apartment Expense</ion-label>
+      <ion-toggle formControlName="fctl_isApartmentExpense" slot="end" color="success" checked="false" (click)="toggle();"></ion-toggle>
+      <ion-note color="danger" *ngIf="expenseToggle==false">Toggle if Apartment Expense</ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-button (click)="contribute()" expand="block" color="secondary">
+    Pay
+  </ion-button>
+  <ion-button (click)="home()" expand="block" color="tertiary">
+    Home
+  </ion-button>
+  </form>
+  </ion-content>
+  
